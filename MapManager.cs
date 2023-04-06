@@ -39,19 +39,31 @@ namespace R3DCore.Maps
         }
         private void Start()
         {
-            SceneManager.GetSceneByName("SimpleScene");
-            RegisterMap(AssetUtils.LoadAssetBundleFromResources("koalasmaps", typeof(MapMan).Assembly).GetAllScenePaths().First<string>());
+            // ⌄ simple method of adding custom maps ⌄ //
+            var maps = AssetUtils.LoadAssetBundleFromResources("koalasmaps", typeof(MapMan).Assembly).GetAllScenePaths();
+            foreach(var map in maps)
+            {
+                RegisterMap(map);
+            }
+            // ^ simple method of adding custom maps ^ //
         }
+
+
+
+
         public void RegisterMap(string map)
         {
             Maps.Add(map);
         }
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(Player), "Start")]
-        public static bool PatchStart(Player __instance)
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Player), "Awake")]
+        public static void Awake(Player __instance)
         {
             __instance.gameObject.AddComponent<MapPhotonManager>();
-            return false;
+            if(PhotonNetwork.IsMasterClient && __instance.refs.view.IsMine)
+            {
+                instance.NextMap();
+            }
         }
         [HarmonyPrefix]
         [HarmonyPatch(typeof(Connection), "OnPlayerEnteredRoom")]
@@ -116,7 +128,6 @@ namespace R3DCore.Maps
         public void RPCPushMap(int map)
         {
             MapMan.instance.LoadMap(map);
-            var view = FindObjectsOfType<PhotonView>().Where((pv) => pv.IsMine == true).ToArray()[0];
             MapMan.instance.curMap = map;
         }
     }

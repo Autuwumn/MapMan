@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<BaseOutputPath></BaseOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Reference Include="0Harmony">
+	    <HintPath>..\..\..\..\..\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\core\0Harmony.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Assembly-CSharp">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Landfall Archives\Archive\ROUNDS 3D\ROUNDS 3D_Data\Managed\Assembly-CSharp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="BepInEx">
+	    <HintPath>..\..\..\..\..\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\core\BepInEx.dll</HintPath>
+	  </Reference>
+	  <Reference Include="MainMenu">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Landfall Archives\Archive\ROUNDS 3D\BepInEx\plugins\MainMenu.dll</HintPath>
+	  </Reference>
+	  <Reference Include="NetworkingCore">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Landfall Archives\Archive\ROUNDS 3D\BepInEx\plugins\NetworkingCore.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PhotonRealtime">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\PhotonRealtime.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PhotonUnityNetworking">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\PhotonUnityNetworking.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PhotonUnityNetworking.Utilities">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\PhotonUnityNetworking.Utilities.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.AssetBundleModule">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.CoreModule">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.PhysicsModule">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Landfall Archives\Archive\ROUNDS 3D\ROUNDS 3D_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+	  </Reference>
+	  <Reference Include="UnityEngine.TerrainModule">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Landfall Archives\Archive\ROUNDS 3D\ROUNDS 3D_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\koalasmaps" />
+	</ItemGroup>
+
+</Project>
